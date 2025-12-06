@@ -9,25 +9,3 @@
     # INSERT 문 만들어주는 함수 호출 (a,b,c,d,e)
 
     ### 수집 후 INSERT 문 작성 insertQuery.txt 텍스트를 추가하는 방식으로 하면 되겠죠
-
-    #######
-
-        print("이미지 수집 함수 호출...")
-    image_urls = get_all_image_urls(driver)
-    save_urls_to_file(image_urls);
-
-    # 함수 기본정보(카테고리, 브랜드, 이름) 가져오는 함수 호출 - 병국
-    # 상품 메인 이미지 url 가져오는 함수 호출 - 병국
-    # 상품 디테일 이미지 url 가져오는 함수 호출 -소라
-    # 상품 상세 정보 제공고시 데이터 가져오는 함수 호출 - 소라
-    # 상품 옵션 정보(옵션이미지, 옵션명, 옵션가격) 가져오는 함수 호출 - 민석
-
-    # INSERT 문 만들어주는 함수 호출 (a,b,c,d,e)
-
-    ### 수집 후 INSERT 문 작성 insertQuery.txt 텍스트를 추가하는 방식으로 하면 되겠죠
-
-    #######
-
-    # 뒤로가기
-    driver.back()
-    time.sleep(2)

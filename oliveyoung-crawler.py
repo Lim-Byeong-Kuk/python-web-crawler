@@ -4,6 +4,7 @@ import time
 import traceback
 
 from mainImgCol import save_urls_to_file, get_main_image_urls
+from productInfo import print_product_info, save_product_info, get_product_basic_info
 
 # undetected-chromedriver 설정 (기존 설정 유지)
 options = uc.ChromeOptions()
@@ -42,6 +43,16 @@ try:
 
         print("이미지 수집 함수 호출...")
         image_urls = get_main_image_urls(driver, 3)  # 3개로 명시적 지정
+
+        # 상품 기본 정보 수집
+        print("\n상품 정보 수집 중...")
+        category, brand, product_name = get_product_basic_info(driver)
+
+        # 상품 정보 출력
+        print_product_info(category, brand, product_name)
+
+        # 정보 저장
+        save_product_info(category, brand, product_name, "product_info.txt")
         save_urls_to_file(image_urls)
 
         print("\n뒤로가기 시도 중...")
