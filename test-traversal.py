@@ -44,28 +44,6 @@ try:
         detail_url = driver.current_url
         print(f"상세 페이지 URL: {detail_url}")
 
-        print("이미지 수집 함수 호출...")
-        main_image_urls = get_main_image_urls(driver, 3)  # 3개로 명시적 지정
-
-        # 상품 기본 정보 수집
-        print("\n상품 정보 수집 중...")
-        category, brand, product_name = get_product_basic_info(driver)
-
-        # 상품 정보 출력
-        print_product_info(category, brand, product_name)
-
-        # 정보 저장
-        save_product_info(category, brand, product_name, "product_info.txt")
-        save_urls_to_file(main_image_urls)
-
-
-        ### 소라 ###
-        # 상품정보 제공 고시 수집+저장
-        get_product_info_provided(driver, "product_info_provided.txt")
-
-        # 상품 상세 이미지 수집+저장
-        detail_image_urls = get_detail_image_urls(driver, "detail_image_urls.txt")
-        # create_detail_image_sql(product_id, detail_image_urls, "detail_image_sql.txt");
 
         print("\n뒤로가기 시도 중...")
 
