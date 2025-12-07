@@ -7,6 +7,35 @@ from datetime import datetime, timedelta
 JSON_FILE_PATH = "product_data.json"
 SQL_FILE_PATH = "product_data_sql.txt"
 
+def create_product_id_with_transaction(product_name, transaction):
+    """
+    새로운 제품 ID를 생성하고 JSON 파일에 트랜잭션으로 기록합니다.
+
+    Args:
+        product_name (str): 제품명
+        transaction: FileTransaction 객체
+
+    Returns:
+        int: 새로 생성된 제품 ID 또는 0(중복된 경우)
+    """
+    # JSON 데이터 로드
+    data = load_product_data()
+
+    # 이미 존재하는 제품명인지 확인
+    if product_name in data["products"]:
+        return 0
+
+    # 새 ID 할당
+    new_id = data["next_id"]
+    data["products"][product_name] = new_id
+
+    # next_id 증가
+    data["next_id"] += 1
+
+    # JSON 파일 저장 (트랜잭션 적용)
+    transaction.write_json(JSON_FILE_PATH, data)
+
+    return new_id
 
 def load_product_data():
     """JSON 파일에서 제품 데이터를 로드합니다."""

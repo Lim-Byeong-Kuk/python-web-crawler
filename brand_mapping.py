@@ -1,5 +1,5 @@
 """
-브랜드 매핑 딕셔너리
+브랜드 매핑 딕셔너리 (트랜잭션 지원)
 key: 브랜드 이름, value: 브랜드 ID
 동적으로 새로운 브랜드 처리 가능
 JSON 파일로 데이터 저장/불러오기 지원
@@ -34,40 +34,50 @@ def _initialize_data():
         _id_sequence = 1
         print(f"'{DEFAULT_DATA_FILE}' 파일을 찾을 수 없습니다. 새로 생성합니다.")
 
-def _update_sql_file():
+def _update_sql_file(transaction=None):
     """
     전체 브랜드 목록으로 SQL 파일을 업데이트합니다.
     ID 포함하여 생성합니다.
+
+    Args:
+        transaction: FileTransaction 객체 (트랜잭션 사용 시)
     """
     try:
-        with open(SQL_OUTPUT_FILE, 'w', encoding='utf-8') as f:
-            f.write("INSERT INTO brands (id, name, is_deleted, created_at, updated_at) VALUES")
+        sql_content = "INSERT INTO brands (id, name, is_deleted, created_at, updated_at) VALUES"
 
-            all_brands = get_all_brands()
-            for i, (name, id_val) in enumerate(all_brands):
-                sql_line = f"({id_val}, '{name}', FALSE, NOW(), NOW())"
-                if i < len(all_brands) - 1:
-                    sql_line += ","
-                else:
-                    sql_line += ";"
+        all_brands = get_all_brands()
+        sql_lines = []
 
-                if i == 0:
-                    f.write(f"\n{sql_line}")
-                else:
-                    f.write(f"\n{sql_line}")
+        for name, id_val in all_brands:
+            sql_line = f"({id_val}, '{name}', FALSE, NOW(), NOW())"
+            sql_lines.append(sql_line)
+
+        if sql_lines:
+            sql_content += "\n" + ",\n".join(sql_lines) + ";"
+        else:
+            sql_content += ";"
+
+        if transaction:
+            # 트랜잭션 사용
+            transaction.write_file(SQL_OUTPUT_FILE, sql_content)
+        else:
+            # 일반 파일 쓰기
+            with open(SQL_OUTPUT_FILE, 'w', encoding='utf-8') as f:
+                f.write(sql_content)
 
         print(f"SQL 파일이 업데이트되었습니다: {SQL_OUTPUT_FILE} (총 {len(all_brands)}개)")
 
     except Exception as e:
         print(f"SQL 파일 업데이트 중 오류: {e}")
 
-def get_brand_id(brand_name: str) -> Optional[int]:
+def get_brand_id(brand_name: str, transaction=None) -> Optional[int]:
     """
     브랜드 이름으로 ID를 조회합니다.
     브랜드가 없으면 자동으로 새로 생성합니다.
 
     Args:
         brand_name (str): 브랜드 이름
+        transaction: FileTransaction 객체 (트랜잭션 사용 시)
 
     Returns:
         int: 브랜드 ID (없으면 새로 생성하여 반환)
@@ -96,11 +106,20 @@ def get_brand_id(brand_name: str) -> Optional[int]:
 
     print(f"새로운 브랜드 생성: '{cleaned_name}' -> ID: {new_id}")
 
-    # SQL 파일 업데이트 (전체 재생성)
-    _update_sql_file()
+    # SQL 파일 업데이트 (트랜잭션 또는 일반 파일 쓰기)
+    _update_sql_file(transaction)
 
     # 변경사항 파일에 저장
-    save_to_file(DEFAULT_DATA_FILE)
+    if transaction:
+        # 트랜잭션 사용
+        data = {
+            'brands': BRAND_NAME_TO_ID,
+            'next_id': _id_sequence
+        }
+        transaction.write_json(DEFAULT_DATA_FILE, data)
+    else:
+        # 일반 파일 쓰기
+        save_to_file(DEFAULT_DATA_FILE)
 
     return new_id
 
@@ -250,11 +269,14 @@ def export_brands_to_txt(filename: str = "brands_export.txt") -> bool:
         print(f"파일 내보내기 중 오류 발생: {e}")
         return False
 
-def generate_sql_file():
+def generate_sql_file(transaction=None):
     """
     현재 브랜드 목록으로 SQL 파일을 생성합니다.
+
+    Args:
+        transaction: FileTransaction 객체 (트랜잭션 사용 시)
     """
-    _update_sql_file()
+    _update_sql_file(transaction)
 
 # 모듈 로드 시 데이터 초기화
 _initialize_data()

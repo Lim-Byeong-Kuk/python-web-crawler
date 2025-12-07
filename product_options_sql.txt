@@ -1,0 +1,44 @@
+INSERT INTO product_options
+(product_id, option_name, purchase_price, selling_price,
+ current_stock, initial_stock, safety_stock,
+ image_url, display_order,
+ is_deleted, created_at, updated_at)
+VALUES
+(1, '바이오더마 토너 500ml 기획', 10000, 30000, 80, 100, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018491610ko.jpg?l=ko&QT=85&SF=webp&sharpen=1x0.5', 0, false, NOW(), NOW()),
+(2, '달바 퍼스트 스프레이 세럼 100ml 2개 기획', 20000, 59800, 80, 100, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023272408ko.jpg?l=ko&QT=85&SF=webp&sharpen=1x0.5', 0, false, NOW(), NOW()),
+(3, '에스트라 아토베리어365 크림 80ml 기획', 15000, 33000, 120, 120, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022283315ko.jpg?l=ko&QT=85&SF=webp&sharpen=1x0.5', 0, false, NOW(), NOW()),
+(4, '구달 청귤 비타C 잡티케어 아이크림 30ml', 15000, 24000, 90, 90, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022977610ko.jpg?l=ko&QT=85&SF=webp&sharpen=1x0.5', 0, false, NOW(), NOW()),
+(5, '티트리 진정수분 1매', 500, 1000, 80, 100, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/1/2095773322051515522.jpg?RS=108x0&QT=85&SF=webp&sharpen=1x0.5', 0, false, NOW(), NOW()),
+(5, '콜라겐 코어탄력 1매', 500, 1000, 80, 100, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/1/4292023589387008731.jpg?RS=108x0&QT=85&SF=webp&sharpen=1x0.5', 1, false, NOW(), NOW()),
+(5, '비타민씨 잡티토닝 1매', 500, 1000, 120, 120, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/1/6333511698168958736.jpg?RS=108x0&QT=85&SF=webp&sharpen=1x0.5', 2, false, NOW(), NOW()),
+(5, '세라마이드 보습장벽 1매', 500, 1000, 90, 90, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/1/5177396663963625881.jpg?RS=108x0&QT=85&SF=webp&sharpen=1x0.5', 3, false, NOW(), NOW()),
+(5, '마데카소사이드 흔적리페어 1매', 800, 2000, 70, 70, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/1/1550813712772282449.jpg?RS=108x0&QT=85&SF=webp&sharpen=1x0.5', 4, false, NOW(), NOW()),
+(5, '로제 PDRN 모공결광 1매', 800, 2000, 90, 90, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/3/927811821371366876.jpg?RS=108x0&QT=85&SF=webp&sharpen=1x0.5', 5, false, NOW(), NOW()),
+(5, '히알루론산 고밀도 수분 1매', 800, 2000, 70, 70, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/2/7886183073217244310.jpg?RS=108x0&QT=85&SF=webp&sharpen=1x0.5', 6, false, NOW(), NOW()),
+(6, '달바 비타 하이드로겔 마스크 4매입', 14000, 28000, 70, 70, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0022/A00000022879929ko.png?l=ko&QT=100&SF=webp&sharpen=1x0.5', 0, false, NOW(), NOW());
+
+
+INSERT INTO product_options
+(product_id, option_name, purchase_price, selling_price,
+ current_stock, initial_stock, safety_stock,
+ image_url, display_order,
+ is_deleted, created_at, updated_at)
+VALUES
+(7, '[2025 어워즈] 라운드랩 1025 독도 토너 500ml 어워즈 한정기획 (+200ml 미스트+스킨패드 30매)', 14900, 29800, 143, 188, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023871001ko.jpg?l=ko', 0, false, NOW(), NOW());
+
+INSERT INTO product_options
+(product_id, option_name, purchase_price, selling_price,
+ current_stock, initial_stock, safety_stock,
+ image_url, display_order,
+ is_deleted, created_at, updated_at)
+VALUES
+(8, '[증정기획/대용량] 토리든 다이브인 저분자 히알루론산 토너 500ml 기획 (+화장솜 60매 증정)', 10875, 21750, 133, 155, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0018/A00000018047411ko.jpg?l=ko', 0, false, NOW(), NOW());
+
+INSERT INTO product_options
+(product_id, option_name, purchase_price, selling_price,
+ current_stock, initial_stock, safety_stock,
+ image_url, display_order,
+ is_deleted, created_at, updated_at)
+VALUES
+(9, '[2025 어워즈] 아누아 어성초 77 토너 500ml 어워즈 기획(+토너40ml+오일20ml+선10ml+마스크1매)', 13750, 27500, 74, 119, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023809505ko.png?l=ko', 0, false, NOW(), NOW());
+

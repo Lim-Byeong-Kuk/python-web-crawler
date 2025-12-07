@@ -4,9 +4,9 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-def get_detail_image_urls(driver, product_id: int, filename: str = None):
+def get_detail_image_urls(driver, product_id: int, transaction, filename: str = None): # transaction 인자 추가
     """
-    상품 상세 이미지 가져오는 함수
+    상품 상세 이미지 가져오는 함수 (트랜잭션 적용)
     """
     try:
         wait = WebDriverWait(driver, 10)
@@ -46,18 +46,17 @@ def get_detail_image_urls(driver, product_id: int, filename: str = None):
 
         print(f"상세 이미지 {len(detail_urls)}개 수집 완료")
 
-        # INSERT문 생성
-        if detail_urls:
+        # INSERT문 생성 및 트랜잭션으로 파일 추가
+        if detail_urls and filename:
             sql_lines = []
             for idx, url in enumerate(detail_urls):
                 sql_lines.append(f"({product_id}, {idx}, '{url}')")
             sql_text = "INSERT INTO product_detail_images (product_id, display_order, image_url) VALUES\n"
             sql_text += ",\n".join(sql_lines) + ";\n\n"
 
-            if filename:
-                with open(filename, "a", encoding="utf-8") as f:
-                    f.write(sql_text)
-                print(f"상세 이미지 INSERT문이 '{filename}'에 저장되었습니다.")
+            # 트랜잭션으로 파일에 추가
+            transaction.append_file(filename, sql_text)
+            print(f"상세 이미지 INSERT문이 '{filename}'에 트랜잭션으로 저장되었습니다.")
 
         return detail_urls if detail_urls else None
 

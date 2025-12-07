@@ -90,10 +90,18 @@ def reset_product_detail_info_id():
     _last_filename = None
 
 
-def get_product_dtailinfo_provided(driver, filename: str = None):
+def get_product_dtailinfo_provided(driver, transaction=None, filename: str = None):
     """
     상품정보 제공고시 테이블을 가져오는 함수
     ID는 자동으로 증가합니다.
+
+    Args:
+        driver: Selenium WebDriver
+        transaction: FileTransaction 객체 (트랜잭션 사용 시)
+        filename: SQL 파일명
+
+    Returns:
+        tuple: (product_info dict, product_detail_info_id)
     """
     global _product_detail_info_id_counter
 
@@ -142,8 +150,19 @@ def get_product_dtailinfo_provided(driver, filename: str = None):
         sql = f"INSERT INTO product_detail_info (id, {columns}, created_at, updated_at)\nVALUES ({product_detail_info_id}, {values}, NOW(), NOW());\n\n"
 
         if filename:
-            with open(filename, "a", encoding='utf-8') as f:
-                f.write(sql)
+            if transaction:
+                # 트랜잭션 사용: append 모드로 추가
+                try:
+                    with open(filename, 'r', encoding='utf-8') as f:
+                        existing_content = f.read()
+                except FileNotFoundError:
+                    existing_content = ""
+
+                transaction.write_file(filename, existing_content + sql)
+            else:
+                # 일반 파일 쓰기: append 모드
+                with open(filename, "a", encoding='utf-8') as f:
+                    f.write(sql)
 
         return product_info, product_detail_info_id
 

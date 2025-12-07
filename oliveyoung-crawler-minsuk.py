@@ -114,7 +114,7 @@ try:
                 print(f"✓ {len(product_options)}개의 옵션이 수집되었습니다.")
 
                 # 옵션 정보 텍스트 파일 저장
-                save_product_options(product_options, "product_options.txt")
+                # save_product_options(product_options, "product_options.txt")
 
                 # 옵션 SQL INSERT 문 생성 및 저장
                 print("[민석] 옵션 SQL 생성 중...")

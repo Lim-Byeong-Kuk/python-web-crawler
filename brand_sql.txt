@@ -11,4 +11,6 @@ INSERT INTO brands (id, name, is_deleted, created_at, updated_at) VALUES
 (10, '스킨푸드', FALSE, NOW(), NOW()),
 (11, '토니모리', FALSE, NOW(), NOW()),
 (12, '클리오', FALSE, NOW(), NOW()),
-(13, '헤라', FALSE, NOW(), NOW());
+(13, '헤라', FALSE, NOW(), NOW()),
+(14, '라운드랩', FALSE, NOW(), NOW()),
+(15, '아누아', FALSE, NOW(), NOW());

@@ -276,11 +276,12 @@ def crawl_products_on_current_page(driver, original_url, max_products=0):
                         # 트랜잭션을 사용하여 원자성 보장
                         crawl_success = False
                         try:
-                            with FileTransaction() as transaction:
-                                # 상세 페이지 크롤링 함수 호출
-                                crawl_product_on_detail_page(driver, transaction, product_counter)
-                                # 예외가 없으면 자동으로 commit됨
-                                crawl_success = True
+                            print("상품 순회 로직")
+                            # with FileTransaction() as transaction:
+                            #     # 상세 페이지 크롤링 함수 호출
+                            #     crawl_product_on_detail_page(driver, transaction, product_counter)
+                            #     # 예외가 없으면 자동으로 commit됨
+                            #     crawl_success = True
 
                         except ValueError as ve:
                             # 비즈니스 로직 예외 (중복 상품, 필수 데이터 누락 등)
