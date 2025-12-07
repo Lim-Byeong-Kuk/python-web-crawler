@@ -11,6 +11,7 @@ from productInfo import print_product_info, get_product_basic_info
 from detailImg import get_detail_image_urls
 from product_mapping import create_product_id, update_product_data_sql
 from productDetailInfoProvided import get_product_dtailinfo_provided, reset_product_detail_info_id
+from option import get_product_options, save_product_options # 민석 추가, 저장 함수 추가
 
 # undetected-chromedriver 설정 (기존 설정 유지)
 options = uc.ChromeOptions()
@@ -96,6 +97,15 @@ try:
         # create_detail_image_sql(product_id, detail_image_urls, "detail_image_sql.txt");
 
         # 상품 데이터 수집 끝
+
+        ### 민석 ###
+        # 상품 옵션 정보(옵션이미지, 옵션명, 옵션가격) 가져오는 함수 호출 - 민석
+        print("상품 옵션 정보 수집 함수 호출...")
+        product_options = get_product_options(driver)  # <<< 여기서 option.py 함수 호출
+        print(product_options)  # 수집된 데이터 확인
+
+        # 💡 옵션 정보 저장 함수 호출 (새로 추가)
+        save_product_options(product_options, "product_options.txt")
 
         print("\n뒤로가기 시도 중...")
 
