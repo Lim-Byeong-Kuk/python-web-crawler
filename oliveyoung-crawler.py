@@ -6,7 +6,7 @@ import traceback
 from mainImgCol import save_urls_to_file, get_main_image_urls
 from productInfo import print_product_info, save_product_info, get_product_basic_info
 from detailImg import get_detail_image_urls
-from productInfoProvided import get_product_info_provided
+from productDetailInfoProvided import get_product_dtailinfo_provided, get_product_dtailinfo_provided, reset_product_detail_info_id
 
 # undetected-chromedriver 설정 (기존 설정 유지)
 options = uc.ChromeOptions()
@@ -61,7 +61,7 @@ try:
 
         ### 소라 ###
         # 상품정보 제공 고시 수집+저장
-        get_product_info_provided(driver, "product_info_provided.txt")
+        result, product_id = get_product_dtailinfo_provided(driver, filename="product_detailinfo_provided_sql.txt")
 
         # 상품 상세 이미지 수집+저장
         detail_image_urls = get_detail_image_urls(driver, "detail_image_urls.txt")

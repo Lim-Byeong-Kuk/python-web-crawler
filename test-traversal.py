@@ -6,7 +6,7 @@ import traceback
 from mainImgCol import save_urls_to_file, get_main_image_urls
 from productInfo import print_product_info, save_product_info, get_product_basic_info
 from detailImg import get_detail_image_urls
-from productInfoProvided import get_product_info_provided
+from productDetailInfoProvided import get_product_info_provided
 
 # undetected-chromedriver 설정 (기존 설정 유지)
 options = uc.ChromeOptions()
