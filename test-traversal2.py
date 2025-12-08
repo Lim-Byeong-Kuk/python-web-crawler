@@ -18,7 +18,7 @@ def create_driver():
     options.add_argument(
         "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36")
 
-    return uc.Chrome(options=options, version_main=142, use_subprocess=True)
+    return uc.Chrome(options=options, version_main=137, use_subprocess=True)
 
 
 def go_back_to_original_page(driver, original_url):
