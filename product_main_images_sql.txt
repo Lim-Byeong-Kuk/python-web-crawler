@@ -2136,4 +2136,13 @@ INSERT INTO product_main_images (product_id, image_type, display_order, image_ur
 (710, 'GALLERY', 2, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0020/A00000020368912ko.jpg?l=ko'),
 (711, 'THUMBNAIL', 0, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019878504ko.jpg?l=ko'),
 (711, 'GALLERY', 1, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019878505ko.jpg?l=ko'),
-(711, 'GALLERY', 2, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019878507ko.jpg?l=ko');
+(711, 'GALLERY', 2, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019878507ko.jpg?l=ko'),
+(712, 'THUMBNAIL', 0, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023119302ko.png?l=ko'),
+(712, 'GALLERY', 1, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023119304ko.png?l=ko'),
+(712, 'GALLERY', 2, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023119303ko.png?l=ko'),
+(713, 'THUMBNAIL', 0, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023119505ko.jpg?l=ko'),
+(713, 'GALLERY', 1, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023119503ko.png?l=ko'),
+(713, 'GALLERY', 2, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023119505ko.jpg?l=ko'),
+(714, 'THUMBNAIL', 0, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023365619ko.jpg?l=ko'),
+(714, 'GALLERY', 1, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023365615ko.jpg?l=ko'),
+(714, 'GALLERY', 2, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0023/A00000023365607ko.jpg?l=ko');

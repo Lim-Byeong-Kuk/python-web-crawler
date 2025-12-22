@@ -1711,5 +1711,18 @@ VALUES
 (710, '02 시카 그린', 11000, 22000, 129, 140, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2024/4/8741613857423958524.jpg?RS=108x0', 1, false, NOW(), NOW()),
 (710, '03 레몬 크림', 11000, 22000, 0, 85, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2024/4/316032167636918904.jpg?RS=108x0', 2, true, NOW(), NOW()),
 (710, '04 퓨어 라벤더', 11000, 22000, 0, 97, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2024/4/5202442556995238280.jpg?RS=108x0', 3, true, NOW(), NOW()),
-(711, '[화잘먹] 데이지크 워터 베일 프라이머 40ml', 14000, 28000, 139, 148, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019878507ko.jpg?l=ko', 0, false, NOW(), NOW());
+(711, '[화잘먹] 데이지크 워터 베일 프라이머 40ml', 14000, 28000, 139, 148, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/thumbnails/10/0000/0019/A00000019878507ko.jpg?l=ko', 0, false, NOW(), NOW()),
+(712, '바닐라 17N', 6080, 12160, 116, 155, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/7877366905741551926.jpg?RS=108x0', 0, false, NOW(), NOW()),
+(712, '로지 21P', 6080, 12160, 81, 113, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/3039894756026700278.jpg?RS=108x0', 1, false, NOW(), NOW()),
+(713, '01 스킨베이지', 9880, 19760, 115, 126, 10, '이미지 요소 없음', 0, false, NOW(), NOW()),
+(713, '02 퓨어라벤더', 9880, 19760, 150, 151, 10, '이미지 요소 없음', 1, false, NOW(), NOW()),
+(714, '01 멜트어웨이', 6100, 12200, 81, 102, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/5967035960544641227.png?RS=108x0', 0, false, NOW(), NOW()),
+(714, '02 도쿄블라썸', 6100, 12200, 94, 112, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/1111703286741199052.png?RS=108x0', 1, false, NOW(), NOW()),
+(714, '03 리틀빗', 6100, 12200, 85, 102, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/882486688872963519.png?RS=108x0', 2, false, NOW(), NOW()),
+(714, '04 힙서울', 6100, 12200, 73, 115, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/3221434277982277324.png?RS=108x0', 3, false, NOW(), NOW()),
+(714, '05 이더웨이', 6100, 12200, 119, 166, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/533626947152914445.png?RS=108x0', 4, false, NOW(), NOW()),
+(714, '06 하트어택', 6100, 12200, 129, 135, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/7594126363281604210.png?RS=108x0', 5, false, NOW(), NOW()),
+(714, '07 핑크헤르츠', 6100, 12200, 64, 114, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/5158700596062602736.png?RS=108x0', 6, false, NOW(), NOW()),
+(714, '08 체리올로지', 6100, 12200, 91, 104, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/8543150826307712428.png?RS=108x0', 7, false, NOW(), NOW()),
+(714, '09 바이탈리즘', 6100, 12200, 147, 169, 10, 'https://image.oliveyoung.co.kr/cfimages/cf-goods/uploads/images/options/item/2025/8/231960847355539107.png?RS=108x0', 8, false, NOW(), NOW());
 

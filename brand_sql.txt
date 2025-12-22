@@ -264,4 +264,5 @@ INSERT INTO brands (id, name, is_deleted, created_at, updated_at) VALUES
 (263, '베르사체', FALSE, NOW(), NOW()),
 (264, '지미추', FALSE, NOW(), NOW()),
 (265, '마인드오버바디', FALSE, NOW(), NOW()),
-(266, '데이지크', FALSE, NOW(), NOW());
+(266, '데이지크', FALSE, NOW(), NOW()),
+(267, '이더앤', FALSE, NOW(), NOW());
